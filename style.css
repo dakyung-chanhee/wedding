@@ -129,3 +129,19 @@ main section.gallery img.gallery-image {
   margin-right: 8px;
   margin-bottom: 8px;
 }
+
+#gallery-dialog {
+  padding: 0;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+#gallery-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#gallery-dialog-image {
+  max-width: 90vw;
+  max-height: 90vh;
+}
