@@ -16,33 +16,30 @@ ol {
 }
 
 body {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   color: #333;
   font-size: 18px;
   line-height: 1.3;
   font-weight: 400;
+  min-width: 320px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
   overflow-x: hidden;
 }
 
 header {
-  margin: 0 auto 10vh auto;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  /* 헤더 이미지 배경색과 잘 어우러지는 배경색 사용 + 헤더 이미지에 그라데이션 적용 (자연스러운 경계선 처리) */
-  background-color: #aaa;
 }
 
 header .header-image-container {
+  width: 100%;
   height: 80vh;
   min-height: 400px;
-  max-height: 800px;
-  min-width: 320px;
-  max-width: 1200px;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   position: relative;
@@ -51,25 +48,8 @@ header .header-image-container {
 header .header-image-container .header-image {
   width: 100%;
   object-fit: cover;
+  object-position: center bottom;
   position: relative;
-}
-
-header .header-image-container .header-title {
-  position: absolute;
-  text-align: center;
-  z-index: 1;
-  margin-top: 5vh;
-}
-
-header .header-image-container .header-title h1 {
-  font-size: 2.5rem;
-  font-weight: 300;
-  margin-bottom: 1rem;
-}
-
-header .header-image-container .header-title h2 {
-  font-size: 1.25rem;
-  font-weight: 300;
 }
 
 main {
@@ -83,30 +63,53 @@ main section {
   margin: 120px 0;
 }
 
+main section.invitation {
+  width: 400px;
+  margin: 24px auto;
+}
+
+main section.invitation h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+main section.invitation span.and {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
 main section.who {
-  margin: 0 auto;
+  position: relative;
+  height: 4000px;
 }
 
 main section.who .who-image-container {
   width: 100%;
   display: flex;
-  gap: 16px;
+  gap: 64px;
   position: sticky;
+  /* for safari and webkit - sticky*/
+  position: -webkit-sticky;
   top: 0;
+  margin-bottom: 60px;
 }
 
 main section.who img.who-image {
   /* 첫 이미지의 해상도에 따라 보이는 느낌이 달라진다. 적절한 이미지를 선택하자. */
-  height: 50vh;
+  height: 80vh;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 main section.who p.who-description {
-  position: sticky;
-  margin-top: 500px;
-  opacity: 0;
-  padding: 0 16px;
+  position: fixed;
+  top: 85vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  visibility: hidden; /* visibility 속성은 js에서 scroll 이벤트가 발생할 때 변경한다. */
 }
 
 .map-wrapper,
@@ -122,7 +125,7 @@ main section.gallery {
 }
 
 main section.gallery img.gallery-image {
-  width: calc((100% - 8px * 5) / 4);
+  width: calc((100% - 8px * 5) / 3);
   margin-right: 8px;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }

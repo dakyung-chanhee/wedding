@@ -1,18 +1,24 @@
-window.addEventListener("load", function () {
+window.addEventListener('load', function () {
   transformIntroductionHorizontally();
   presentIntroductionDescription();
 });
 
-document.addEventListener("scroll", function () {
+window.addEventListener('scroll', function () {
+  transformIntroductionHorizontally();
+  presentIntroductionDescription();
+});
+
+// for mobile
+window.addEventListener('touchmove', function () {
   transformIntroductionHorizontally();
   presentIntroductionDescription();
 });
 
 function transformIntroductionHorizontally() {
-  const section = document.querySelector("section.who");
-  const imageContainer = document.querySelector("section.who .who-image-container");
-  const firstImage = document.querySelector("section.who img:first-child");
-  const lastImage = document.querySelector("section.who img:last-child");
+  const section = document.querySelector('section.who');
+  const imageContainer = document.querySelector('section.who .who-image-container');
+  const firstImage = document.querySelector('section.who img:first-child');
+  const lastImage = document.querySelector('section.who img:last-child');
 
   // 현재 스크롤 위치
   const scrollY = document.documentElement.scrollTop || window.scrollY;
@@ -42,16 +48,20 @@ function transformIntroductionHorizontally() {
 }
 
 function presentIntroductionDescription() {
-  const descriptions = document.querySelectorAll("section.who .who-description");
-  const firstGalleryImage = document.querySelector("section.who img:first-child");
-  const { bottom: imageBottom } = firstGalleryImage.getBoundingClientRect();
+  const section = document.querySelector('section.who');
 
-  descriptions.forEach((description) => {
-    const { top: descriptionTop } = description.getBoundingClientRect();
-    const aboveThanScreen = descriptionTop < window.innerHeight;
-    const belowThanImage = descriptionTop > imageBottom;
-    const show = belowThanImage && aboveThanScreen;
+  const descriptions = document.querySelectorAll('section.who .who-description');
+  const descriptionCount = descriptions.length;
 
-    description.style.opacity = show ? 1 : 0;
-  });
+  const scrollY = document.documentElement.scrollTop || window.scrollY;
+  const scrollStartY = section.offsetTop;
+  const scrollEndY = section.offsetTop + section.offsetHeight - window.innerHeight;
+  const scrollRatio = (scrollY - scrollStartY) / (scrollEndY - scrollStartY);
+
+  let showingIndex = Math.floor(scrollRatio * descriptionCount);
+
+  for (let i = 0; i < descriptionCount; i++) {
+    const description = descriptions[i];
+    description.style.visibility = i === showingIndex ? 'visible' : 'hidden';
+  }
 }
