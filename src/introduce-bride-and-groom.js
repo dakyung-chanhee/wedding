@@ -1,18 +1,12 @@
-window.addEventListener('load', function () {
-  transformIntroductionHorizontally();
-  presentIntroductionDescription();
-});
+document.addEventListener('load', handleScroll);
+document.addEventListener('scroll', handleScroll);
+document.addEventListener('touchmove', handleScroll); // for mobile
 
-window.addEventListener('scroll', function () {
+function handleScroll() {
   transformIntroductionHorizontally();
   presentIntroductionDescription();
-});
-
-// for mobile
-window.addEventListener('touchmove', function () {
-  transformIntroductionHorizontally();
-  presentIntroductionDescription();
-});
+  resetXPosition();
+}
 
 function transformIntroductionHorizontally() {
   const section = document.querySelector('section.who');
@@ -63,5 +57,11 @@ function presentIntroductionDescription() {
   for (let i = 0; i < descriptionCount; i++) {
     const description = descriptions[i];
     description.style.visibility = i === showingIndex ? 'visible' : 'hidden';
+  }
+}
+
+function resetXPosition() {
+  if (window.scrollX !== 0) {
+    window.scrollTo(0, window.scrollY);
   }
 }
