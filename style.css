@@ -68,7 +68,6 @@ main section {
 }
 
 main section.invitation {
-  width: 400px;
   margin: 24px auto;
 }
 
@@ -112,7 +111,6 @@ main section.who p.who-description {
   top: 85vh;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
   visibility: hidden; /* visibility 속성은 js에서 scroll 이벤트가 발생할 때 변경한다. */
 }
 
