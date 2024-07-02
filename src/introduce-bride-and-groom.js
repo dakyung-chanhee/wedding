@@ -56,7 +56,7 @@ function presentIntroductionDescription() {
 
   for (let i = 0; i < descriptionCount; i++) {
     const description = descriptions[i];
-    description.style.visibility = i === showingIndex ? 'visible' : 'hidden';
+    description.style.opacity = i === showingIndex ? 1 : 0;
   }
 }
 

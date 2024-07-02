@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Ownglyph_eunbyul21-Rg';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_eunbyul21-Rg.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 h1,
 h2,
 h3,
@@ -20,6 +27,7 @@ html {
 }
 
 body {
+  font-family: 'Ownglyph_eunbyul21-Rg', sans-serif;
   box-sizing: border-box;
   color: #333;
   font-size: 18px;
@@ -68,7 +76,7 @@ main section {
 }
 
 main section.invitation {
-  margin: 24px auto;
+  margin: 48px auto;
 }
 
 main section.invitation h1 {
@@ -85,7 +93,7 @@ main section.invitation span.and {
 
 main section.who {
   position: relative;
-  height: 4000px;
+  height: 10000px; /* 값이 클 수록 횡스크롤이 느리게 된다. */
 }
 
 main section.who .who-image-container {
@@ -108,11 +116,13 @@ main section.who img.who-image {
 
 main section.who p.who-description {
   position: fixed;
+  width: 100%;
   top: 80vh;
   left: 50%;
   line-height: 2;
   transform: translate(-50%, -50%);
-  visibility: hidden; /* visibility 속성은 js에서 scroll 이벤트가 발생할 때 변경한다. */
+  opacity: 0; /* visibility 속성은 js에서 scroll 이벤트가 발생할 때 변경한다. */
+  transition: opacity 0.2s ease-in-out;
 }
 
 .map-wrapper,
