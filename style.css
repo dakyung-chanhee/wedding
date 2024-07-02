@@ -93,7 +93,7 @@ main section.invitation span.and {
 
 main section.who {
   position: relative;
-  height: 10000px; /* 값이 클 수록 횡스크롤이 느리게 된다. */
+  height: 5000px; /* 값이 클 수록 횡스크롤이 느리게 된다. */
 }
 
 main section.who .who-image-container {
