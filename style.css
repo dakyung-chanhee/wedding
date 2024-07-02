@@ -42,7 +42,7 @@ header {
 
 header .header-image-container {
   width: 100%;
-  height: 80vh;
+  height: 70vh;
   min-height: 400px;
   display: flex;
   justify-content: center;
