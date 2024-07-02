@@ -101,15 +101,16 @@ main section.who .who-image-container {
 
 main section.who img.who-image {
   /* 첫 이미지의 해상도에 따라 보이는 느낌이 달라진다. 적절한 이미지를 선택하자. */
-  height: 80vh;
+  height: 70vh;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 main section.who p.who-description {
   position: fixed;
-  top: 85vh;
+  top: 80vh;
   left: 50%;
+  line-height: 2;
   transform: translate(-50%, -50%);
   visibility: hidden; /* visibility 속성은 js에서 scroll 이벤트가 발생할 때 변경한다. */
 }
