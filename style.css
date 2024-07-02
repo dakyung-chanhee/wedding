@@ -139,6 +139,7 @@ main section.gallery img.gallery-image {
   border: none;
   background: transparent;
   outline: none;
+  overflow: hidden;
 }
 
 #gallery-dialog::backdrop {
@@ -148,4 +149,15 @@ main section.gallery img.gallery-image {
 #gallery-dialog-image {
   max-width: 90vw;
   max-height: 90vh;
+}
+
+#gallery-dialog button#gallery-dialog-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  cursor: pointer;
 }
