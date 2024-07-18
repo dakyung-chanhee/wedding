@@ -154,11 +154,22 @@ main section.where .link-container a img {
   border-radius: 4px;
 }
 
-.calendar-wrapper {
-  width: 90%;
-  height: 400px;
-  margin: 0 auto;
-  border: 1px #ccc solid;
+main section.where img.sketch-map-image {
+  width: 100%;
+  max-width: 600px;
+}
+
+main section.when a.ics-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+main section.when img.calendar-image {
+  width: 100%;
+  margin: 16px 0;
+  max-width: 500px;
 }
 
 main section.gallery {
