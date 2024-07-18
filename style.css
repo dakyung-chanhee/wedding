@@ -119,7 +119,8 @@ main section.who p.who-description {
   width: 100%;
   top: 80vh;
   left: 50%;
-  line-height: 2;
+  font-size: 1.25rem;
+  line-height: 2.25;
   transform: translate(-50%, -50%);
   opacity: 0; /* visibility 속성은 js에서 scroll 이벤트가 발생할 때 변경한다. */
   transition: opacity 0.2s ease-in-out;
