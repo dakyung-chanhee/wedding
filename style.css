@@ -33,41 +33,32 @@ body {
   font-size: 18px;
   line-height: 1.3;
   font-weight: 400;
-  min-width: 320px;
-  max-width: 900px;
+  width: 100%;
   margin: 0 auto;
   padding: 0;
   overflow-x: hidden;
 }
 
 header {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-header .header-image-container {
   width: 100%;
   height: 70vh;
-  min-height: 400px;
-  display: flex;
-  justify-content: center;
   position: relative;
+  overflow: hidden;
 }
 
-.full-image {
+header .header-image {
   width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: center bottom;
-  position: relative;
+  object-position: 50% 77%;
 }
 
 main {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
+  min-width: 320px;
+  max-width: 900px;
 }
 
 main section {
@@ -92,6 +83,14 @@ main section.introduction p.description {
   left: 50%;
   font-size: 1.25rem;
   line-height: 2.25;
+}
+
+main section.introduction img.full-image {
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  max-width: 900px;
+  margin: 16px 0;
 }
 
 main section.where img.sketch-map {
