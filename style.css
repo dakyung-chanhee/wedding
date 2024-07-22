@@ -57,7 +57,7 @@ header .header-image-container {
   position: relative;
 }
 
-header .header-image-container .header-image {
+.full-image {
   width: 100%;
   object-fit: cover;
   object-position: center bottom;
@@ -75,10 +75,6 @@ main section {
   margin: 120px 0;
 }
 
-main section.invitation {
-  margin: 48px auto;
-}
-
 main section.invitation h1 {
   font-size: 2rem;
   font-weight: 700;
@@ -91,39 +87,11 @@ main section.invitation span.and {
   margin-bottom: 1rem;
 }
 
-main section.who {
-  position: relative;
-  height: 5000px; /* 값이 클 수록 횡스크롤이 느리게 된다. */
-}
-
-main section.who .who-image-container {
+main section.introduction p.description {
   width: 100%;
-  display: flex;
-  gap: 64px;
-  position: sticky;
-  /* for safari and webkit - sticky*/
-  position: -webkit-sticky;
-  top: 0;
-  margin-bottom: 60px;
-}
-
-main section.who img.who-image {
-  /* 첫 이미지의 해상도에 따라 보이는 느낌이 달라진다. 적절한 이미지를 선택하자. */
-  height: 70vh;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-main section.who p.who-description {
-  position: fixed;
-  width: 100%;
-  top: 80vh;
   left: 50%;
   font-size: 1.25rem;
   line-height: 2.25;
-  transform: translate(-50%, -50%);
-  opacity: 0; /* visibility 속성은 js에서 scroll 이벤트가 발생할 때 변경한다. */
-  transition: opacity 0.2s ease-in-out;
 }
 
 main section.where img.sketch-map {
