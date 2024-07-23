@@ -213,3 +213,22 @@ main section.gallery img.gallery-image {
   cursor: pointer;
   transform: translateY(-50%);
 }
+
+footer#bride-and-groom-anime img {
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  width: 50px;
+  background-size: cover;
+  opacity: 1;
+}
+
+footer#bride-and-groom-anime img#anime-bride-character {
+  left: 0;
+  transform: scaleX(-1);
+}
+
+footer#bride-and-groom-anime img#anime-groom-character {
+  right: 0;
+  transform: scaleX(1);
+}
