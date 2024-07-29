@@ -164,8 +164,6 @@ main section.gallery img.gallery-image {
 }
 
 #gallery-dialog {
-  width: 100%;
-  height: 100%;
   padding: 0;
   border: none;
   background: transparent;
