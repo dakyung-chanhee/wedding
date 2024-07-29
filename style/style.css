@@ -164,6 +164,8 @@ main section.gallery img.gallery-image {
 }
 
 #gallery-dialog {
+  width: 100%;
+  height: 100%;
   padding: 0;
   border: none;
   background: transparent;
@@ -178,6 +180,8 @@ main section.gallery img.gallery-image {
 #gallery-dialog-image {
   max-width: 100%;
   max-height: 100%;
+  display: block;
+  margin: auto;
 }
 
 #gallery-dialog button {
@@ -187,7 +191,7 @@ main section.gallery img.gallery-image {
   cursor: pointer;
   width: 48px;
   height: 64px;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 #gallery-dialog button#gallery-dialog-close {
