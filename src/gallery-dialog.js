@@ -6,6 +6,7 @@ window.addEventListener('load', function () {
   galleryImages.forEach((image) => {
     image.addEventListener('click', function () {
       galleryDialogImage.src = image.src;
+      disableScroll();
       galleryDialog.showModal();
     });
   });
@@ -16,6 +17,8 @@ window.addEventListener('load', function () {
       galleryDialog.close();
     }
   });
+
+  galleryDialog.addEventListener('close', enableScroll);
 });
 
 function prevImage() {
@@ -34,4 +37,12 @@ function nextImage() {
   if (currentImageIndex < galleryImages.length - 1) {
     galleryDialogImage.src = galleryImages[currentImageIndex + 1].src;
   }
+}
+
+function disableScroll() {
+  document.body.style.overflow = 'hidden';
+}
+
+function enableScroll() {
+  document.body.style.overflow = '';
 }
