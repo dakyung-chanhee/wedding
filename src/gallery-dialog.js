@@ -18,7 +18,10 @@ window.addEventListener('load', function () {
     }
   });
 
-  galleryDialog.addEventListener('close', enableScroll);
+  galleryDialog.addEventListener('close', () => {
+    enableScroll();
+    galleryDialogImage.src = '';
+  });
 });
 
 function prevImage() {
