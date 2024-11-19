@@ -165,6 +165,10 @@ main section.gallery img.gallery-image {
   background: transparent;
   outline: none;
   overflow: hidden;
+  position: fixed;
+  width: 90%;
+  max-width: 600px;
+  height: 90%;
 }
 
 #gallery-dialog::backdrop {
@@ -176,6 +180,11 @@ main section.gallery img.gallery-image {
   max-height: 100%;
   display: block;
   margin: auto;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #gallery-dialog button {
@@ -192,6 +201,7 @@ main section.gallery img.gallery-image {
   position: absolute;
   top: 0;
   right: 0;
+  /* FIXME: 닫기 버튼 이동 */
 }
 
 #gallery-dialog button#gallery-dialog-prev {
