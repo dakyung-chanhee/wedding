@@ -153,10 +153,8 @@ main section.when img.calendar-image {
 }
 
 main section.gallery img.gallery-image {
-  width: calc((100% - 6px * 4) / 3);
+  width: calc((100% - 4px * 4) / 3);
   min-height: 100px;
-  margin-right: 4px;
-  margin-bottom: 4px;
 }
 
 #gallery-dialog {
