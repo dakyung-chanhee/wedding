@@ -192,7 +192,7 @@ main section.gallery img.gallery-image {
   color: white;
   border: none;
   cursor: pointer;
-  width: 48px;
+  width: 60px;
   height: 64px;
   font-size: 2rem;
 }
@@ -201,7 +201,7 @@ main section.gallery img.gallery-image {
   position: absolute;
   top: 0;
   right: 0;
-  /* FIXME: 닫기 버튼 이동 */
+  visibility: hidden;
 }
 
 #gallery-dialog button#gallery-dialog-prev {
@@ -209,6 +209,8 @@ main section.gallery img.gallery-image {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+  height: 50%;
+  opacity: 0;
 }
 
 #gallery-dialog button#gallery-dialog-next {
@@ -216,4 +218,6 @@ main section.gallery img.gallery-image {
   top: 50%;
   right: 0;
   transform: translateY(-50%);
+  height: 50%;
+  opacity: 0;
 }
