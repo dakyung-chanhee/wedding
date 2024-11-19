@@ -154,7 +154,9 @@ main section.when img.calendar-image {
 
 main section.gallery img.gallery-image {
   width: calc((100% - 4px * 4) / 3);
-  min-height: 100px;
+  border-radius: 2px;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
 }
 
 #gallery-dialog {
