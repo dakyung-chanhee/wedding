@@ -156,7 +156,9 @@
   </body>
 
   <script type="text/javascript" src="src/gallery-dialog.js"></script>
+
   <script type="text/javascript">
+    // show=all 쿼리가 없을 경우, bestImages에 있는 이미지만 보이도록 설정
     const bestImages = [1, 3, 9, 13, 15, 17, 20, 22, 25, 28, 30, 32, 34, 37, 38, 41, 43, 46, 50, 52, 54];
 
     if (window.location.search !== '?show=all') {
@@ -170,5 +172,45 @@
         }
       });
     }
+  </script>
+
+  <script type="text/javascript">
+    // 맘에 안드는 유저 인터랙션들을 막기 위한 스크립트
+
+    // only for production
+    if (window.location.href.includes('localhost')) {
+      return;
+    }
+
+    function preventDefault(e) {
+      e.preventDefault();
+    }
+
+    // 더블클릭해서 화면 커지는것 방지
+    document.addEventListener('dblclick', preventDefault);
+
+    // 마우스 우클릭 방지
+    document.addEventListener('contextmenu', preventDefault);
+
+    // 터치로 확대하기 방지
+    document.addEventListener(
+      'touchstart',
+      function (event) {
+        if (event.touches.length > 1) {
+          event.preventDefault();
+        }
+      },
+      { passive: false }
+    );
+
+    document.addEventListener(
+      'touchmove',
+      function (event) {
+        if (event.touches.length > 1) {
+          event.preventDefault();
+        }
+      },
+      { passive: false }
+    );
   </script>
 </html>
